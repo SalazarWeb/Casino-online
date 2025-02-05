@@ -54,7 +54,7 @@ export const CrashChart = ({ multiplier, gameState }: CrashChartProps) => {
 
     // Dibujar la línea comenzando desde la mitad
     const startX = canvas.width * 0.0;
-    const startY = canvas.height * 0.9;
+    const startY = canvas.height * 1.0;
     
     const points = [];
     points.push({ x: startX, y: startY });
@@ -83,7 +83,7 @@ export const CrashChart = ({ multiplier, gameState }: CrashChartProps) => {
       if (gameState !== 'crashed') {
         // Dibujar cohete
         if (rocketRef.current) {
-          const rocketSize = 35;
+          const rocketSize = 20;
           const prevPoint = points[points.length - 2] || points[0];
           const angle = Math.atan2(lastPoint.y - prevPoint.y, lastPoint.x - prevPoint.x);
           
