@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Menu, Search, Bell, Wallet2, User } from 'lucide-react';
 
 export const Header = () => {
@@ -5,10 +6,10 @@ export const Header = () => {
     <header className="bg-[#CD212A] py-4">
       <div className="container mx-auto px-4">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center space-x-4">
+          <Link to="/" className="flex items-center space-x-4">
             <Menu className="h-6 w-6" />
             <h1 className="text-2xl font-bold">Pictasino</h1>
-          </div>
+          </Link>
           
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto">
             <div className="relative w-full sm:w-auto">

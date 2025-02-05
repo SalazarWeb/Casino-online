@@ -3,11 +3,15 @@ interface GameCardProps {
   image: string;
   category: string;
   rtp: string;
+  onClick?: () => void;
 }
 
-export const GameCard = ({ title, image, category, rtp }: GameCardProps) => {
+export const GameCard = ({ title, image, category, rtp, onClick }: GameCardProps) => {
   return (
-    <div className="bg-white/5 rounded-lg overflow-hidden hover:bg-white/10 transition cursor-pointer">
+    <div 
+      className="bg-white/5 rounded-lg overflow-hidden hover:bg-white/10 transition cursor-pointer"
+      onClick={onClick}
+    >
       <img
         src={image}
         alt={title}
