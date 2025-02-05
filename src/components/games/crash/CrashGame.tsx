@@ -9,19 +9,21 @@ export const CrashGame = () => {
   const [betAmount, setBetAmount] = useState(0);
   const [autoPayoutAt, setAutoPayoutAt] = useState(0);
   const [history, setHistory] = useState<number[]>([]);
+  const [maxMultiplier, setMaxMultiplier] = useState(1);
 
   const crash = useCallback(() => {
-    setGameState('crashed');
-    setHistory((prev) => [currentMultiplier, ...prev].slice(0, 10));
-    setTimeout(() => {
-      setGameState('waiting');
-      setCurrentMultiplier(1);
-    }, 2000);
-  }, [currentMultiplier]);
+    if (gameState !== 'crashed') {
+      setHistory((prev) => [currentMultiplier, ...prev].slice(0, 10));
+      setGameState('crashed');
+      setTimeout(() => {
+        setGameState('waiting');
+        setCurrentMultiplier(1);
+      }, 2000);
+    }
+  }, [currentMultiplier, gameState]);
 
   const cashOut = useCallback(() => {
     if (gameState === 'playing') {
-      // Aquí manejarías la lógica de actualizar el balance del usuario
       setGameState('waiting');
     }
   }, [gameState]);
@@ -33,26 +35,27 @@ export const CrashGame = () => {
           const newValue = prev + 0.01;
           if (autoPayoutAt > 0 && newValue >= autoPayoutAt) {
             cashOut();
+            return prev;
+          }
+          if (newValue >= maxMultiplier) {
+            crash();
+            return prev;
           }
           return newValue;
         });
       }, 100);
 
-      const crashTimeout = setTimeout(() => {
-        crash();
-      }, Math.random() * 10000 + 5000);
-
       return () => {
         clearInterval(interval);
-        clearTimeout(crashTimeout);
       };
     }
-  }, [gameState, autoPayoutAt, cashOut, crash]);
+  }, [gameState, autoPayoutAt, cashOut, crash, maxMultiplier]);
 
   const startGame = () => {
     if (betAmount <= 0) return;
     setGameState('playing');
     setCurrentMultiplier(1);
+    setMaxMultiplier(1 + Math.random() * 3);
   };
 
   return (
