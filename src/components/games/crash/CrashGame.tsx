@@ -55,7 +55,14 @@ export const CrashGame = () => {
     if (betAmount <= 0) return;
     setGameState('playing');
     setCurrentMultiplier(1);
-    setMaxMultiplier(1 + Math.random() * 3);
+    
+    // Definir límites para el multiplicador
+    const minMultiplier = 1.01;  // El multiplicador mínimo
+    const maxMultiplier = 3;   // El multiplicador máximo
+    
+    // Generar un multiplicador aleatorio entre los límites
+    const randomMultiplier = minMultiplier + Math.random() * (maxMultiplier - minMultiplier);
+    setMaxMultiplier(randomMultiplier);
   };
 
   return (
