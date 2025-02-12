@@ -4,6 +4,7 @@ import { Navigation } from './components/layout/Navigation';
 import { HeroBanner } from './components/sections/HeroBanner';
 import { GameGrid } from './components/sections/GameGrid';
 import { CrashGame } from './components/games/crash/CrashGame';
+import { SlotMachine } from './components/games/slot-machine/SlotMachine';
 import CriptoHeader from './components/layout/CryptoHeader';
 import Footer from './components/layout/Footer';
 function App() {
@@ -24,10 +25,10 @@ function App() {
               </>
             } />
             <Route path="/crash" element={<CrashGame />} />
-            <Route path="/tragamonedas" element={""} />
-            <Route path="/apuestas_deportivas" element={""} />
+            <Route path="/slot-machine" element={<SlotMachine />} />
+            <Route path="/sports-betting" element={""} />
             <Route path="/blackjack" element={""} />
-            <Route path="/ruleta" element={""} />
+            <Route path="/roulette" element={""} />
           </Routes>
         </main>
         <CriptoHeader />

@@ -19,10 +19,10 @@ export const Navigation = () => {
       { title: 'Premios Especiales', link: '#' },
     ],
     juegos: [
-      { title: 'Slots Populares', link: '#' },
-      { title: 'Nuevos Juegos', link: '#' },
       { title: 'Crash', link: '/crash' },
-      { title: 'Slots Clásicos', link: '#' },
+      { title: 'Tragamonedas', link: '/slot-machine' },
+      { title: 'Blackjack', link: '#' },
+      { title: 'Nuevos Juegos', link: '#' },
     ],
   };
 

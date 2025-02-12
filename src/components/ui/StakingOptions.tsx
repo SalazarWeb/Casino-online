@@ -50,13 +50,13 @@ export const StakingOptions: React.FC = () => {
           title="BTC Staking"
           apr="54.38%"
           icon="https://img.freepik.com/fotos-premium/bitcoin-fondo-btc-criptomoneda-bitcoin-moneda-blockchain-fondo-pantalla_691560-7915.jpg"
-          onClick={() => console.log('BFG Staking clicked')}
+          onClick={() => ('')}
         />
         <StakingOption
           title="Crypto Staking"
           apr="a un 65%"
           icon="https://aqru.io/app/uploads/2022/04/staking.png"
-          onClick={() => console.log('Crypto Staking clicked')}
+          onClick={() => ('')}
         />
       </div>
     </div>
