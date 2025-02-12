@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Menu, Search, Bell, Wallet2, User } from 'lucide-react';
+import { Search, Bell, Wallet2, User } from 'lucide-react';
 
 export const Header = () => {
   return (
@@ -7,7 +7,7 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <Link to="/" className="flex items-center space-x-4">
-            <Menu className="h-6 w-6" />
+            <img src="https://www.nicepng.com/png/full/824-8247270_png-file-svg-silueta-de-caracol-de-mar.png" alt="Pictasino" className="h-6 w-6" />
             <h1 className="text-2xl font-bold">Pictasino</h1>
           </Link>
           
