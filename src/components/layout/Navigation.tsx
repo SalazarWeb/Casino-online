@@ -1,5 +1,7 @@
+'use client'
+
 import { Gift, Trophy, Gamepad2 } from 'lucide-react';
-import { NavItem } from '../ui/NavItem.tsx';
+import { NavItem } from '../ui/NavItem';
 import { useState } from 'react';
 
 export const Navigation = () => {
@@ -7,22 +9,22 @@ export const Navigation = () => {
 
   const menuItems = {
     bonos: [
-      { title: 'Bono de Bienvenida', link: '#' },
-      { title: 'Bono sin Depósito', link: '#' },
-      { title: 'Bono Recarga', link: '#' },
-      { title: 'Programa VIP', link: '#' },
+      { title: 'Bono de Bienvenida', link: '/bonos/bienvenida' },
+      { title: 'Bono sin Depósito', link: '/bonos/sin-deposito' },
+      { title: 'Bono Recarga', link: '/bonos/recarga' },
+      { title: 'Programa VIP', link: '/bonos/vip' },
     ],
     torneos: [
-      { title: 'Torneos Diarios', link: '#' },
-      { title: 'Torneos Semanales', link: '#' },
-      { title: 'Ranking de Jugadores', link: '#' },
-      { title: 'Premios Especiales', link: '#' },
+      { title: 'Torneos Diarios', link: '/torneos/diarios' },
+      { title: 'Torneos Semanales', link: '/torneos/semanales' },
+      { title: 'Ranking de Jugadores', link: '/torneos/ranking' },
+      { title: 'Premios Especiales', link: '/torneos/premios' },
     ],
     juegos: [
       { title: 'Crash', link: '/crash' },
       { title: 'Tragamonedas', link: '/slot-machine' },
-      { title: 'Blackjack', link: '#' },
-      { title: 'Nuevos Juegos', link: '#' },
+      { title: 'Blackjack', link: '/blackjack' },
+      { title: 'Nuevos Juegos', link: '/nuevos-juegos' },
     ],
   };
 

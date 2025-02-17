@@ -23,22 +23,22 @@ export const CrashControls = ({
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div className="space-y-4">
         <div>
-          <label className="block text-sm font-medium mb-1">Cantidad de apuesta</label>
+          <label className="block text-sm text-white font-medium mb-1">Cantidad de apuesta</label>
           <input
             type="number"
             value={betAmount}
             onChange={(e) => setBetAmount(Number(e.target.value))}
-            className="w-full bg-[#2a2a3e] rounded px-4 py-2"
+            className="w-full bg-[#2a2a3e] text-green-500 rounded px-2 py-2"
             disabled={gameState === 'playing'}
           />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1">Auto-retiro en</label>
+          <label className="block text-sm text-white font-medium mb-1">Auto-retiro en</label>
           <input
             type="number"
             value={autoPayoutAt}
             onChange={(e) => setAutoPayoutAt(Number(e.target.value))}
-            className="w-full bg-[#2a2a3e] rounded px-4 py-2"
+            className="w-full bg-[#2a2a3e] text-red-500 rounded px-2 py-2"
             disabled={gameState === 'playing'}
             step="0.1"
           />

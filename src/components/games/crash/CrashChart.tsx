@@ -40,15 +40,18 @@ export const CrashChart = ({ multiplier, gameState }: CrashChartProps) => {
       canvas.height = containerWidth * (4/10);
     }
 
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    // Crear imagen del cohete
+    // Crear y cargar imagen del cohete
     if (!rocketRef.current) {
       const rocket = new Image();
       rocket.src = '/rocket.svg';
-      rocketRef.current = rocket;
+      rocket.onload = () => {
+        rocketRef.current = rocket;
+      };
+      return;
     }
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -125,9 +128,9 @@ export const CrashChart = ({ multiplier, gameState }: CrashChartProps) => {
       <canvas
         ref={canvasRef}
         className="w-full h-full"
-        style={{ backgroundColor: 'rgba(10, 10, 42, 0.3)' }}
+        style={{ backgroundColor: 'rgba(18, 18, 110, 0.3)' }}
       />
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl font-bold">
+      <div className="absolute text-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl font-bold">
         {multiplier.toFixed(2)}x
       </div>
     </div>

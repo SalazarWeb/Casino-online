@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react';
 import { Coins } from 'lucide-react';
 import { SlotReel } from './SlotReel';

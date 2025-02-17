@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect, useCallback } from 'react';
 import { CrashChart } from './CrashChart';
 import { CrashControls } from './CrashControls';

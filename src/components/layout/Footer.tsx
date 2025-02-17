@@ -2,7 +2,7 @@ import { Youtube, ExternalLink, ChevronRight, Twitter, Facebook, Instagram, Disc
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1A1D26] text-gray-400 py-12 px-6">
+    <footer className="bg-[#1A1D26] text-gray-400 py-12 px-12">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* I-GAMING */}

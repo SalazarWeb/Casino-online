@@ -1,10 +1,12 @@
-import { useNavigate } from 'react-router-dom';
+'use client'
+
+import { useRouter } from 'next/navigation';
 import { GameCard } from '../ui/GameCard';
 import { StakingOptions } from '../ui/StakingOptions';
 import { gamesData } from './GamesData';
 
 export const GameGrid = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const gameRoutes = {
     "Crash": "/crash",
@@ -23,7 +25,7 @@ type GameTitle = keyof typeof gameRoutes;
             image={game.image}
             category={game.category}
             rtp={game.rtp}
-            onClick={() => navigate(gameRoutes[game.title as GameTitle] || '/default')}
+            onClick={() => router.push(gameRoutes[game.title as GameTitle] || '/default')}
           />
         ))}
         <StakingOptions />
